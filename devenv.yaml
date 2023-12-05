@@ -1,0 +1,8 @@
+allowUnfree: true
+inputs:
+  nixpkgs:
+    url: github:NixOS/nixpkgs/nixpkgs-unstable
+  android-nixpkgs:
+    url: github:maximoffua/android-nixpkgs/stable
+  flutter-nix:
+    url: github:maximoffua/flutter.nix
