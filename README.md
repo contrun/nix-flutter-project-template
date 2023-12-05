@@ -1,16 +1,21 @@
-# play_flutter
-
-A new Flutter project.
+# Project demonstrating how to build flutter project with devenv and nix
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This projects use the following softwares to build a flutter project
+- [Nix & NixOS | Reproducible builds and deployments](https://nixos.org/)
+- [direnv – unclutter your .profile | direnv](https://direnv.net/)
+- [Fast, Declarative, Reproducible, and Composable Developer Environments - devenv](https://devenv.sh/)
 
-A few resources to get you started if this is your first Flutter project:
+In order to build the flutter project and run the app in an android emulator, you need to
+install nix and direnv, and then run the following commands
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+direnv allow # Allow direnv to use devenv defined in flake.nix
+create-avd # Create an Android Virtual Device (AVD)
+devenv up emulator # Start the Android emulator
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Now run `flutter run` in another terminal, you should see you app started in the Android terminal.
+
+Special thanks to @hatch01, for pointing out how to make nix and flutter work together in [Documentation: Flutter Flake · Issue #267263 · NixOS/nixpkgs](https://github.com/NixOS/nixpkgs/issues/267263).
